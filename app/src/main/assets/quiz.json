@@ -1,0 +1,36 @@
+{
+"androidQuiz" :
+  [
+    {
+      "id": "1",
+      "question": "Which Folder do you copy and paste image to?",
+      "answer": [ "Layout", "Resources", "Drawable"],
+      "correctIndex" : 1
+    },
+    {
+      "id" : "2",
+      "question": "Which component property should be changed to a name that is specific of the components use?",
+      "answer": [ "Text", " ID","Drawable"],
+      "correctIndex" : 1
+    },
+    {
+      "id" : "3",
+      "question": "Which is correct for using any image with the name \"home\"?",
+      "answer": [ "Android:\"@drawable/hone", "Android:src=\"home\"", "app:srcCompat=\"@drawable/home" ],
+      "correctIndex" : 2
+    },
+    {
+      "id" : "4",
+      "question": "Which listener is called when something is clicked?",
+      "answer": [ "OnClickListener", "OnKeyListener", "OnContextListener"],
+      "correctIndex" : 0
+    },
+    {
+      "id" : "5",
+      "question": "Which Android Studio file is most of the app design done in?",
+      "answer": [ "MainActivity.Java", "Activity_main.xml", "AndroidManifest.xml"],
+      "correctIndex" : 1
+    }
+  ]
+}
+
