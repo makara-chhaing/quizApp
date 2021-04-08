@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class QuestionActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
-    TextView question, progressText;
+    TextView question, progressText, welcomeText;
     Button firstAnswer, secondAnswer, thirdAnswer, submit, selected;
     Button[] btnGroup;
     int questionNumber = 0, progress = 0, score = 0;
@@ -36,6 +36,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
+        welcomeText = findViewById(R.id.welcome_tv_id);
         progressBar = findViewById(R.id.pb_progressbar_id);
         progressText = findViewById(R.id.tv_progress_id);
         question = findViewById(R.id.tv_question_id);
@@ -43,6 +44,17 @@ public class QuestionActivity extends AppCompatActivity {
         secondAnswer = findViewById(R.id.btn_2nd_answer_id);
         thirdAnswer = findViewById(R.id.btn_3rd_answer_id);
         submit = findViewById(R.id.btn_submit);
+
+
+        Intent i = getIntent();
+        if (i != null)
+        {
+            String name = i.getStringExtra("name");
+            if (!name.isEmpty() && progress == 0){
+                welcomeText.setText("Welcome: " + name + "!");
+            }
+        }
+
 
         btnGroup = new Button[]{
                 firstAnswer,
@@ -127,6 +139,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }
             }
         }
+
         // if the progress is less tha 80%
         if (progress < 80) {
             progress += 20;
@@ -138,6 +151,10 @@ public class QuestionActivity extends AppCompatActivity {
             progress += 20;
             progressBar.setProgress(progress);
             ((Button) v).setText("See Reseult");
+        }
+        // Clear welcome text
+        if(progress > 0){
+            welcomeText.setText("");
         }
     }
 
